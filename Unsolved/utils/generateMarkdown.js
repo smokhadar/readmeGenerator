@@ -11,12 +11,12 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown( { title, motivation, problem, installation, contribution, tests, /*license,*/ username, email}) {
+  // how to start new line on markdown? \ breaks template literals
+  return `# ${title}  ##  Description  ${motivation} ${problem}  ## Installation  ${installation}  ## Contribution  ${contribution}  ## Tests  ${tests}  ## Questions For any questions, please reference my Github profile at ${username} or email me at ${email}.
 
   ## License
-  ${renderLicenseSection(data.license)};
-`;
+  ${renderLicenseSection(data.license)};`;
 }
 
 module.exports = generateMarkdown;

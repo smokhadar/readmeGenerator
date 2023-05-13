@@ -2,13 +2,14 @@
 // add to package json
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is your project title'
+        message: 'What is your project title?'
     }, 
     {   
         type: 'input',
@@ -46,11 +47,18 @@ const questions = [
         name: 'username',
         message: 'What is your Github username?'
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email?'
+    },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     // TODO add fs code here to save file
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('Success!'));
 }
 
 // TODO: Create a function to initialize app
