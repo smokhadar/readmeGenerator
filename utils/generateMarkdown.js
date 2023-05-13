@@ -54,3 +54,5 @@ function generateMarkdown( { title, motivation, problem, installation, usage, co
 }
 
 module.exports = generateMarkdown;
+
+console.log("samira");
