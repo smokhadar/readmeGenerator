@@ -54,7 +54,7 @@ function generateMarkdown( { title, motivation, problem, installation, usage, co
   ## Questions
   For any questions, please reference my Github profile at ${username} or email me at ${email}.
   ## License
-  ${renderLicenseSection(license)};`;
+  ${renderLicenseSection(license)}`;
 }
 
 module.exports = generateMarkdown;
