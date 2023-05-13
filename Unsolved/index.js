@@ -3,6 +3,7 @@
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
 const fs = require('fs');
+const { default: Choices } = require('inquirer/lib/objects/choices');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -28,6 +29,11 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'usage',
+        message: 'How is your project be used?'
+    },
+    {
+        type: 'input',
         name: 'contribution',
         message: 'Please list any and all collaborators on this project, with links to their Github profiles.'
     },
@@ -37,11 +43,12 @@ const questions = [
         message: 'Did you write tests for your app? If yes, please share how to run them here.'
     },
     // include license? need to present options
-    // {
-    //     type: 'input',
-    //     name: 'license',
-    //     message: 'What are the steps required to install your project?'
-    // },
+    {
+        type: 'input',
+        name: 'license',
+        message: 'What are the steps required to install your project?',
+        choices: ['MIT', new inquirer.Separator(),'Apache', new inquirer.Separator(), 'GPL', new inquirer.Separator(), 'No license'],
+    },
     {
         type: 'input',
         name: 'username',
