@@ -30,7 +30,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'How is your project be used?'
+        message: 'How can your project be used?'
     },
     {
         type: 'input',
@@ -40,13 +40,12 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Did you write tests for your app? If yes, please share how to run them here.'
+        message: 'Did you write tests for your project? If yes, please share how to run them here.'
     },
-    // include license? need to present options
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'What are the steps required to install your project?',
+        message: 'Please select a license from the choices below.',
         choices: ['MIT', new inquirer.Separator(),'Apache', new inquirer.Separator(), 'GPL', new inquirer.Separator(), 'No license'],
     },
     {
@@ -73,6 +72,7 @@ function init() {
     inquirer.prompt(questions).then(function(answers) {
         const markdownText = generateMarkdown(answers);
         writeToFile('Readme', markdownText);
+        console.log(answers);
     });
 }
 
