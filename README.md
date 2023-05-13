@@ -1,11 +1,9 @@
-# readmeGenerator
+# ReadMe Generator
 
-<!-- exercises to review to help with this hwk-->
-<!-- 10. template literal -->
-<!-- 13 and 14 (read and write file) -->
-<!--20. inquirer activity -->
-<!-- mini project -->
+## Description
+This is a ReadMe generator to simplify and reduce the time spent on creating ReadMe files for programming projects. The application can be accessed through Node in the user's terminal. Once initiated, the program prompts the user to answer several questions. The user's answers are then generated into a template Readme that is saved as a markdown file in the project folder.
 
-<!-- push the readme you create in the video as a file in the github repo in a seperate folder as an example -->
+## Video
+Please watch this video for typical user flow through this application.
 
-<!-- https://www.npmjs.com/package/inquirer - review this -->
+## Screenshot
