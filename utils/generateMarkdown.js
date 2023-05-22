@@ -14,6 +14,9 @@ function renderLicenseBadge(license) {
 
 // Function that returns the license section of README
 function renderLicenseSection(license) {
+  if (!license) {
+    return '';
+  }
     if (license === 'MIT') {
     return '[MIT](https://opensource.org/licenses/MIT) is the license for this project';
   }
