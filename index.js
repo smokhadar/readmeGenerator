@@ -1,9 +1,7 @@
 // Packages needed for this application
-// add to package json
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
 const fs = require('fs');
-const { default: Choices } = require('inquirer/lib/objects/choices');
 
 // Array of questions for user input
 const questions = [
@@ -11,41 +9,92 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'What is your project title?',
-        // validate: titleInput => {
-        //     if (titleInput) {
-
-        //     }
-        // }
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('Enter your title name here.');
+                return false;
+            }
+        }
     }, 
     {   
         type: 'input',
         name: 'motivation',
-        message: 'What was your motivation for the project?'
+        message: 'What was your motivation for the project?',
+        validate: motivationInput => {
+            if (motivationInput) {
+                return true;
+            } else {
+                console.log('Enter your motivation for the project here.');
+                return false;
+            }
+        }
     }, 
     {
         type: 'input',
         name: 'problem',
         message: 'What problem does your project solve?',
+        validate: problemInput => {
+            if(problemInput) {
+                return true;
+            } else {
+                console.log('Enter the problem your project solves here.');
+                return false;
+            }
+        }
     }, 
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the steps required to install your project?'
+        message: 'What are the steps required to install your project?',
+        validate: installationInput => {
+            if (installationInput) {
+                return true;
+            } else {
+                console.log('Enter the installation steps here.')
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'How can your project be used?'
+        message: 'How can your project be used?',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Enter how your project can be used here.');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'contribution',
-        message: 'Please list any and all collaborators on this project, with links to their Github profiles.'
+        message: 'Please list any and all collaborators on this project, with links to their Github profiles.',
+        validate: contributionInput => {
+            if(contributionInput) {
+                return true;
+            } else {
+                console.log('Enter any collaborators here.');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Did you write tests for your project? If yes, please share how to run them here.'
+        message: 'Did you write tests for your project? If yes, please share how to run them here.',
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('Enter any test info for your project here.');
+                return false;
+            }
+        }
     },
     {
         type: 'list',
@@ -56,12 +105,28 @@ const questions = [
     {
         type: 'input',
         name: 'username',
-        message: 'What is your Github username?'
+        message: 'What is your Github username?',
+        validate: usernameInput => {
+            if (usernameInput) {
+                return true;
+            } else {
+                console.log('Enter your Github username here.');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
-        message: 'What is your email?'
+        message: 'What is your email?',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Enter your email here.');
+                return false;
+            }
+        }
     },
 ];
 
@@ -80,5 +145,5 @@ function init() {
     });
 }
 
-// Function call to initialize app
+// Function call to initialize
 init();
