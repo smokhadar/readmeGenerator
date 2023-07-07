@@ -51,7 +51,7 @@ function generateMarkdown( { title, motivation, problem, installation, usage, co
   ## Tests
   ${tests}
   ## Questions
-  For any questions, please reference my Github profile at ${username} or email me at ${email}.
+  For any questions, please reference my Github profile at https://github.com/${username} or email me at ${email}.
   ## License
   ${renderLicenseSection(license)}`;
 }
